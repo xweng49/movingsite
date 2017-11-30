@@ -20,11 +20,26 @@ if (isset($_POST['Delete']))
 if (isset($_POST['SubmitEdit']))
 {
   $initlicense = $_POST['lp'];
-  $license = $_POST['license'];
-  $insurance = $_POST['insurance'];
-  $vin = $_POST['vin'];
-  $model = $_POST['model'];
-  $make = $_POST['make'];
+  if ($_POST['license'] == '' || trim($_POST['license'] == ''))
+  {$license = $_POST{'lp'};}
+  else
+  {$license = $_POST['license'];}
+  if ($_POST['insurance'] == '' || trim($_POST['insurance'] == ''))
+  {$insurance = $_POST{'in'};}
+  else
+  {$insurance = $_POST['insurance'];}
+  if ($_POST['vin'] == '' || trim($_POST['vin'] == ''))
+  {$vin = $_POST{'vi'};}
+  else
+  {$vin = $_POST['vin'];}
+  if ($_POST['model'] == '' || trim($_POST['model'] == ''))
+  {$model = $_POST{'mo'};}
+  else
+  {$model = $_POST['model'];}
+  if ($_POST['make'] == '' || trim($_POST['make'] == ''))
+  {$make = $_POST{'ma'};}
+  else
+  {$make = $_POST['make'];}
   $sql = "UPDATE Vehicle SET LicensePlate = '$license', Insurance = '$insurance', VIN = '$vin', Model = '$model', Make='$make' WHERE LicensePlate = '$initlicense'";
   $result = mysqli_query($connection, $sql);
 }

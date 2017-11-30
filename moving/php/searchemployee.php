@@ -19,6 +19,7 @@
   //-query  the database table
   $sql="SELECT  * FROM Employee WHERE Fname LIKE '%" . $name .  "%' OR LName LIKE '%" . $name ."%'";
   echo "<thead><tr>";
+  echo "$sql";
   if ($result=mysqli_query($connection, $sql))
   {
     while($fieldinfo=mysqli_fetch_field($result))
