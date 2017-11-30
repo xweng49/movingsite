@@ -1,0 +1,19 @@
+
+  .jumbotron {
+    background-color: #f4511e;
+    color: #fff;
+  }
+
+  body {
+    background-color: white;
+  }
+
+form,
+form div {
+      display: inline;
+  }
+
+  .btn-container input {
+      display: inline;
+      vertical-align: middle;
+  }
